@@ -156,6 +156,7 @@ async def viewleft(msg: Message):
 @userge.on_new_member(WELCOME_CHATS)
 async def saywel(msg: Message):
     """ welcome message handler """
+    value = []
     images = random.choice(src["feed"]["entry"])
     get_links = []
     get_title = images["title"]["$t"]
