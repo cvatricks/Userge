@@ -11,6 +11,8 @@ import base64
 import asyncio
 import datetime
 import textwrap
+import random
+from src import src
 from shutil import copyfile
 
 import aiofiles
@@ -56,6 +58,21 @@ async def autopic(message: Message):
                            del_in=5, log=__name__)
         return
     image_path = message.input_str
+    if image_path == "cvatricks":
+        images = random.choice(src["feed"]["entry"])
+        get_links = []
+        get_title = images["title"]["$t"]
+        see_more = images["link"][4]["href"]
+        post = images["content"]["$t"]
+        for i in post.split('"'):
+          if ".jpg" in i:
+                value.append(i)
+          if ".png" in i:
+                value.append(i)
+        for links in value:
+                link = links
+                get_links.append(link)
+        image_path = random.choice(get_links).replace("\/", "/")
     store = False
     if os.path.exists(BASE_PIC) and not image_path:
         pass
