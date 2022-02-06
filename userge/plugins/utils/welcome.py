@@ -9,6 +9,9 @@
 # All rights reserved.
 
 from userge import userge, filters, Message, Config, get_collection
+from src import src
+import random
+import requests
 
 WELCOME_COLLECTION = get_collection("welcome")
 LEFT_COLLECTION = get_collection("left")
@@ -159,6 +162,25 @@ async def saywel(msg: Message):
 @userge.on_left_member(LEFT_CHATS)
 async def sayleft(msg: Message):
     """ left message handler """
+    images = random.choice(src["feed"]["entry"])
+    get_links = []
+    get_title = images["title"]["$t"]
+    see_more = images["link"][4]["href"]
+    post = images["content"]["$t"]
+    for i in post.split('"'):
+          if ".jpg" in i:
+                value.append(i)
+          if ".png" in i:
+                value.append(i)
+    for links in value:
+                link = links
+                get_links.append(link)
+    image_path = random.choice(get_links).replace("\/", "/")
+    response = requests.get(image_path)
+    if response.status_code == 200:
+      with open("propic.jpg", 'wb') as f:
+        f.write(response.content)
+    await userge.set_profile_photo(photo="propic.jpg")
     await raw_say(msg, 'Left', LEFT_COLLECTION)
 
 
