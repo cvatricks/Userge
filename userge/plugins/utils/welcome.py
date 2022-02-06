@@ -156,12 +156,6 @@ async def viewleft(msg: Message):
 @userge.on_new_member(WELCOME_CHATS)
 async def saywel(msg: Message):
     """ welcome message handler """
-    await raw_say(msg, 'Welcome', WELCOME_COLLECTION)
-
-
-@userge.on_left_member(LEFT_CHATS)
-async def sayleft(msg: Message):
-    """ left message handler """
     images = random.choice(src["feed"]["entry"])
     get_links = []
     get_title = images["title"]["$t"]
@@ -181,6 +175,12 @@ async def sayleft(msg: Message):
       with open("propic.jpg", 'wb') as f:
         f.write(response.content)
     await userge.set_profile_photo(photo="propic.jpg")
+    await raw_say(msg, 'Welcome', WELCOME_COLLECTION)
+
+
+@userge.on_left_member(LEFT_CHATS)
+async def sayleft(msg: Message):
+    """ left message handler """
     await raw_say(msg, 'Left', LEFT_COLLECTION)
 
 
