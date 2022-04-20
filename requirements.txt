@@ -41,5 +41,6 @@ urbandict==0.5
 UsergeAntiSpamApi==0.1.8
 wget
 wikipedia
-youtube_dl>=2021.1.8
+#youtube_dl>=2021.1.8
+yt-dlp
 youtube-search-python==1.4.9
