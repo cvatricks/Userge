@@ -23,7 +23,6 @@ from . import versions
 
 _LOG = logging.getLogger(__name__)
 logbot.reply_last_msg("Setting Configs ...")
-main()
 
 
 class Config:
