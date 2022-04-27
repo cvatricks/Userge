@@ -3,9 +3,10 @@ import time
 import datetime
 
 import pyrogram
-from userge import userge, config, logbot
+from userge import userge, config
+CHANNEL = userge.getCLogger(__name__)
 
-def main():
+async def main():
     #user_session_string = os.environ.get("user_session_string")
     bots = [i.strip() for i in os.environ.get("BOTS").split(' ')]
     bot_owner = os.environ.get("OWNER_ID")
@@ -18,11 +19,11 @@ def main():
     with await userge:
             #while True:
             #print("[INFO] starting to check uptime..")
-            logbot.reply_last_msg(f"[INFO] starting to check uptime..")
+            await CHANNEL.log(f"[INFO] starting to check uptime..")
             edit_text = f"@{update_channel} Bot's Uptime Status.(Updated every day)\n\n"
             for bot in bots:
                 #print(f"[INFO] checking @{bot}")
-                logbot.reply_last_msg(f"[INFO] checking @{bot}")
+                await CHANNEL.log(f"[INFO] checking @{bot}")
                 snt = userge.send_message(bot, '/start')
 
                 time.sleep(15)
@@ -30,13 +31,13 @@ def main():
                 msg = userge.get_history(bot, 1)[0]
                 if snt.message_id == msg.message_id:
                     #print(f"[WARNING] @{bot} is down")
-                    logbot.reply_last_msg(f"[WARNING] @{bot} is down")
+                    await CHANNEL.log(f"[WARNING] @{bot} is down")
                     edit_text += f"@{bot} status: `Down`\n\n"
                     userge.send_message(bot_owner,
                                              f"@{bot} status: `Down`")
                 else:
                     #print(f"[INFO] all good with @{bot}")
-                    logbot.reply_last_msg(f"[INFO] all good with @{bot}")
+                    await CHANNEL.log(f"[INFO] all good with @{bot}")
                     edit_text += f"@{bot} status: `Up`\n\n"
                 userge.read_history(bot)
 
@@ -48,7 +49,7 @@ def main():
             userge.edit_message_text(update_channel, status_message_id,
                                          edit_text)
             #print(f"[INFO] everything done! sleeping for 15 mins...")
-            logbot.reply_last_msg(f"[INFO] everything done!")
+            await CHANNEL.log(f"[INFO] everything done!")
 
             #time.sleep(15 * 60)
 main()
