@@ -22,7 +22,7 @@ def main():
             #while True:
             #print("[INFO] starting to check uptime..")
             logbot.reply_last_msg(f"[INFO] starting to check uptime..")
-            edit_text = f"@{UPDATE_CHANNEL} Bot's Uptime Status.(Updated every day)\n\n"
+            edit_text = f"@{update_channel} Bot's Uptime Status.(Updated every day)\n\n"
             for bot in bots:
                 #print(f"[INFO] checking @{bot}")
                 logbot.reply_last_msg(f"[INFO] checking @{bot}")
@@ -48,7 +48,7 @@ def main():
 
             edit_text += f"__last checked on \n{str(utc_now)} UTC\n{ist_now} IST__"
 
-            userge.edit_message_text(UPDATE_CHANNEL, STATUS_MESSAGE_ID,
+            userge.edit_message_text(update_channel, status_message_id,
                                          edit_text)
             #print(f"[INFO] everything done! sleeping for 15 mins...")
             logbot.reply_last_msg(f"[INFO] everything done!")
