@@ -4,7 +4,7 @@ import datetime
 
 import pyrogram
 from userge import userge, config
-@userge.on_start
+@userge.on_start()
 async def main():
     #user_session_string = os.environ.get("user_session_string")
     bots = [i.strip() for i in os.environ.get("BOTS").split(' ')]
