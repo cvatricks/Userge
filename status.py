@@ -3,7 +3,6 @@ import time
 import datetime
 
 import pyrogram
-from userge import userge, config
 
 @userge.on_start()
 async def main():
