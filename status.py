@@ -3,7 +3,6 @@ import time
 import datetime
 
 import pyrogram
-from userge import userge
 from userge.config import Config
 
 #user_session_string = os.environ.get("user_session_string")
@@ -55,4 +54,3 @@ def main():
             logbot.reply_last_msg(f"[INFO] everything done!")
 
             #time.sleep(15 * 60)
-main()
