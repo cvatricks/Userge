@@ -55,3 +55,4 @@ def main():
             logbot.reply_last_msg(f"[INFO] everything done!")
 
             #time.sleep(15 * 60)
+main()
