@@ -7,7 +7,6 @@
 # Please see < https://github.com/UsergeTeam/Userge/blob/master/LICENSE >
 #
 # All rights reserved.
-from status import main
 
 . init/proc.sh
 
@@ -23,4 +22,3 @@ run() {
 }
 
 run "$@"
-main()
