@@ -3,7 +3,7 @@ import time
 import datetime
 
 import pyrogram
-import Config
+import config
 
 #user_session_string = os.environ.get("user_session_string")
 bots = [i.strip() for i in os.environ.get("BOTS").split(' ')]
