@@ -3,7 +3,7 @@ import time
 import datetime
 
 import pyrogram
-from userge import userge, config
+from userge import userge, config, logbot
 
 def main():
     #user_session_string = os.environ.get("user_session_string")
@@ -15,7 +15,7 @@ def main():
     #api_hash = os.environ.get("api_hash")
     #user_client = pyrogram.Client(
     #    user_session_string, api_id=api_id, api_hash=api_hash)
-    with userge:
+    with await userge:
             #while True:
             #print("[INFO] starting to check uptime..")
             logbot.reply_last_msg(f"[INFO] starting to check uptime..")
