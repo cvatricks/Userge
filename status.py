@@ -3,7 +3,9 @@ import time
 import datetime
 
 import pyrogram
+from userge import userge, config
 
+@userge.on_start
 #user_session_string = os.environ.get("user_session_string")
 bots = [i.strip() for i in os.environ.get("BOTS").split(' ')]
 bot_owner = os.environ.get("OWNER_ID")
