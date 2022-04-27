@@ -52,4 +52,4 @@ async def main():
             await CHANNEL.log(f"[INFO] everything done!")
 
             #time.sleep(15 * 60)
-await main()
+main.run()
