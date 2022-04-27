@@ -7,11 +7,7 @@ from userge import userge, config
 
 @userge.on_start
 #user_session_string = os.environ.get("user_session_string")
-j = os.environ.get("BOTS")
-j = j.split(' ')
-for i in j:
-    bots = []
-    bots.append(i)
+bots = ["URLUploadSBBot", "FileStoreSBBot", "FileConvertSBBot", "PremiumSBBot", "TamilYogiSBBot", "KiCkBuTtOwSklBot"]
 bot_owner = os.environ.get("OWNER_ID")
 update_channel = os.environ.get("UPDATE_CHANNEL")
 status_message_id = int(os.environ.get("STATUS_MESSAGE_ID"))
