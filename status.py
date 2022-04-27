@@ -7,7 +7,8 @@ from userge import userge, config
 
 @userge.on_start
 #user_session_string = os.environ.get("user_session_string")
-for i in os.environ.get("BOTS").split(' '):
+j = os.environ.get("BOTS").split(' ')
+for i in j:
     bots = []
     bots.append(i)
 bot_owner = os.environ.get("OWNER_ID")
