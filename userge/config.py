@@ -12,7 +12,6 @@ __all__ = ['Config', 'get_version']
 
 import os
 from typing import Set
-from status import main
 
 import heroku3
 from git import Repo
