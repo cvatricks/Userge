@@ -3,11 +3,10 @@ import time
 import datetime
 
 import pyrogram
-import config
 
 #user_session_string = os.environ.get("user_session_string")
 bots = [i.strip() for i in os.environ.get("BOTS").split(' ')]
-bot_owner = Config.OWNER_ID
+bot_owner = os.environ.get("OWNER_ID")
 update_channel = os.environ.get("UPDATE_CHANNEL")
 status_message_id = int(os.environ.get("STATUS_MESSAGE_ID"))
 #api_id = int(os.environ.get("api_id"))
