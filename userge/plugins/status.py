@@ -53,5 +53,5 @@ async def main():
             #time.sleep(15 * 60)
             
 @userge.on_start
-async run_main():
+async def run_main():
       await main()
