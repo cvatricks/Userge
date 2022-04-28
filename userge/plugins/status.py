@@ -27,7 +27,7 @@ async def main():
 
                 time.sleep(15)
 
-                msg = await userge.get_history(bot, 1)[0]
+                msg = (await userge.get_history(bot, 1))[0]
                 if snt.message_id == msg.message_id:
                     #print(f"[WARNING] @{bot} is down")
                     await CHANNEL.log(f"[WARNING] @{bot} is down")
