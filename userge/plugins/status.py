@@ -51,4 +51,7 @@ async def main():
             await CHANNEL.log(f"[INFO] everything done!")
 
             #time.sleep(15 * 60)
-main()
+            
+@userge.on_start
+async run_main():
+      await main()
