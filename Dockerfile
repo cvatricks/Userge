@@ -54,7 +54,6 @@ COPY . .
 
 # install dependencies
 RUN pip install -r requirements.txt
-RUN python status.py
 
 # command to run on container start
 CMD [ "bash", "./run" ]
