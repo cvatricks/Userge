@@ -4,7 +4,7 @@
      "description": "",
      "scripts": {
          "build": "npm install python",
-         "start": "bash run"
+         "start": "npm run start"
       },
       "repository": {
           "type": "git",
