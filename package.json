@@ -3,7 +3,7 @@
      "version": "1.0.0",
      "description": "",
      "scripts": {
-         "build": "bash run",
+         "build": "bash pip install requirements.txt",
          "start": "bash run"
       },
       "repository": {
