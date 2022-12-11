@@ -3,8 +3,10 @@
      "version": "1.0.0",
      "description": "",
      "scripts": {
-         "build": "npm install python",
-         "start": "npm run start"
+         "start": "bash run"
+      },
+      "dependencies": {
+         "python": "3.9"
       },
       "repository": {
           "type": "git",
